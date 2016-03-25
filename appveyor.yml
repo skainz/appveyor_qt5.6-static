@@ -11,9 +11,9 @@ init:
   - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
  
 install:
-  - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x86'
+  - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat"" x86'
+  #'"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x86'
   - dir
-  - set PATH=c:
   - git clone git://code.qt.io/qt/qt5.git
   - cd qt5
   - git checkout 5.6
