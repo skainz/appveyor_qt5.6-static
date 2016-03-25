@@ -6,9 +6,8 @@ build:
   
  
 install:
-  - cd "C:\Program Files\Microsoft Visual Studio 14.0\VC"
+  - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x86'
   - dir
-  - '"C:\Program Files\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86'
   - git clone git://code.qt.io/qt/qt5.git
   - cd qt5
   - git checkout 5.6
