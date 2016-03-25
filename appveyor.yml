@@ -14,7 +14,7 @@ install:
   - cd qt5
   - git checkout 5.6
   - perl init-repository
-  - configure.bat -prefix c:\qt-5.6.0-static -opensource -release -static -static-runtime -nomake tests -no-compile-examples -no-opengl -skip serialport -no-qml-debug -no-iconv -skip qtwebkit -skip qtwebkit-examples -skip qtwebengine -skip qtdeclarative 
+  - configure.bat -prefix c:\qt-5.6.0-static -opensource -release -static -static-runtime -nomake tests -no-compile-examples -no-opengl -skip serialport -no-qml-debug -no-iconv -opensource -confirm-license -skip qtwebkit -skip qtwebkit-examples -skip qtwebengine -skip qtdeclarative 
 
 
 build_script:
