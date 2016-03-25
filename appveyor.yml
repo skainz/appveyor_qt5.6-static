@@ -2,25 +2,16 @@ version: 1.0.{build}
 build:
   verbosity: minimal
   
-
-configuration: Release
-
-environment:
-  #QTDIR: 'C:\Qt\5.5\msvc2013'
-  QTDIR: 'C:\projects\bmc\qt-5.6.0-static'
-  XSDDIR: 'C:\Program Files (x86)\CodeSynthesis XSD 4.0'
-  #PATH: 'C:\Program Files (x86)\CodeSynthesis XSD 4.0\bin;%PATH%'
-  BOOST_ROOT: 'c:\Libraries\boost_1_59_0'
  
-
 install:
   - git clone git://code.qt.io/qt/qt5.git
   - cd qt5
   - git checkout 5.6
   - perl init-repository
+  - configure.bat -prefix c:\qt-5.6.0-static -opensource -release -static -static-runtime -nomake tests -no-compile-examples -no-opengl -skip serialport -no-qml-debug -no-iconv -skip qtwebkit -skip qtwebkit-examples -skip qtwebengine -skip qtdeclarative 
+
 
 build_script:
-  - msbuild bmc.sln /t:bmc,bmc-ui,bmc_test /p:Configuration=Release
-  - cd c:\projects\bmc\test
-  - Release\bmc_test.exe
+  - nmake
+  - nmake install
   
