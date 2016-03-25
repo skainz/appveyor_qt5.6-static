@@ -4,6 +4,8 @@ version: 1.0.{build}
 build:
   verbosity: minimal
   
+environment:
+  QMAKESPEC: win32-msvc2015
  
 install:
   - '"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x86'
