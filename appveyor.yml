@@ -22,9 +22,11 @@ install:
 
 
 build_script:
-  - nmake
-  - nmake install
-  
+  #- nmake
+  #- nmake install
+  - 7z a configured.zip appveyor-qt5-6-static 
+  - dir configured.zip
+
 
 #on_finish:
 #  - ps: $blockRdp = $true; iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
