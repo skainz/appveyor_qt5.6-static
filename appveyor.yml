@@ -24,7 +24,7 @@ install:
 build_script:
   #- nmake
   #- nmake install
-  - 7z a configured.zip appveyor-qt5-6-static 
+  - 7z a configured.zip C:\projects\appveyor-qt5-6-static
   - dir configured.zip
 
 
