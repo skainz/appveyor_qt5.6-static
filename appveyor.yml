@@ -27,7 +27,7 @@ build_script:
   - 7z a configured.zip C:\projects\appveyor-qt5-6-static
   - dir configured.zip
 
-artifact:
+artifacts:
   - path: configured.zip
 
 #on_finish:
