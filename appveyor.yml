@@ -13,11 +13,13 @@ init:
 install:
   - '"C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86'
   #'"C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x86'
-  - dir
-  - git clone git://code.qt.io/qt/qt5.git
+  - curl.exe  -o qt5.7z http://familiekainz.at/libs/qt5.7z
+  - 7z x qt5.7z
+  #- dir
+  #- git clone git://code.qt.io/qt/qt5.git
   - cd qt5
-  - git checkout 5.6
-  - perl init-repository
+  #- git checkout 5.6
+  #- perl init-repository
   - configure.bat -prefix c:\qt-5.6.0-static -opensource -release -static -static-runtime -nomake tests -no-compile-examples -no-opengl -skip serialport -no-qml-debug -no-iconv -opensource -confirm-license -skip qtwebkit -skip qtwebkit-examples -skip qtwebengine -skip qtdeclarative -skip location -skip webchannel -skip websockets -skip webview -skip winextras -skip sensors -skip androidextras
 
 
